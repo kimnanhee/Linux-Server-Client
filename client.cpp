@@ -92,7 +92,8 @@ void *recvMsg(void *parms)
                     struct dataSysInfo data = *(struct dataSysInfo*) (msg + sizeof(struct msgHeader));
 
                     Read(data);
-                    printf("%s %ld %ld %d\n", data.hostname, data.totalram, data.freeram, data.retValue);
+                    printf("ret value | hostname | total ram    | free ram\n");
+                    printf("%-9d | %-8s | %-12ld | %-12ld\n", data.retValue, data.hostname, data.totalram, data.freeram);
                     break;
                 }
                 default:
